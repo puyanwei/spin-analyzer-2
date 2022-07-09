@@ -1,4 +1,4 @@
-#Spins Analyzer Test
+# Spins Analyzer Test
 
 Just migrating this existing project to a different tech stack.
 

@@ -1,10 +1,10 @@
-import React, { SyntheticEvent, useState } from 'react';
+import React, { SyntheticEvent, useEffect, useState } from 'react';
 
 import { trpc } from '../utils/trpc';
 
 export default function Homepage() {
   const [handHistory, setHandHistory] = useState<string[]>([]);
-  const hello = trpc.useQuery(['example.getAll']);
+  const data = trpc.useQuery(['example.getAll']);
 
   function handleSubmit(e: SyntheticEvent) {
     e.preventDefault();
@@ -21,7 +21,9 @@ export default function Homepage() {
     });
   }
 
-  console.log('handHistory', handHistory);
+  useEffect(() => {
+    console.log('data', data);
+  }, [data]);
 
   return (
     <div className='p-8'>
@@ -41,9 +43,9 @@ export default function Homepage() {
         </form>
       </div>
 
-      <div className='flex items-center justify-center w-full pt-6 text-2xl text-blue-500'>
-        {hello.data ? <p>{hello.data.greeting}</p> : <p>Loading..</p>}
-      </div>
+      {/* <div className='flex items-center justify-center w-full pt-6 text-2xl text-blue-500'>
+        {data ? <p>{data}</p> : <p>Loading..</p>}
+      </div> */}
     </div>
   );
 }

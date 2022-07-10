@@ -4,7 +4,7 @@ import { trpc } from '../utils/trpc';
 
 export default function Homepage() {
   const [handHistory, setHandHistory] = useState<string[]>([]);
-  const hello = trpc.useQuery(['example.hello', { text: 'from tRPC' }]);
+  const hello = trpc.useQuery(['example.getAll']);
 
   function handleSubmit(e: SyntheticEvent) {
     e.preventDefault();

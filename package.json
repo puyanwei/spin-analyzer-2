@@ -5,6 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "postinstall": "prisma generate",
+    "studio": "npx prisma studio",
+    "connect-db": "pscale connect spinlyzer",
+    "generate-schema": "npx prisma generate",
+    "push-schema-to-db": "npx prisma push",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

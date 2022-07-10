@@ -2,7 +2,7 @@ import React, { SyntheticEvent, useState } from 'react';
 
 import { trpc } from '../utils/trpc';
 
-export function Homepage() {
+export default function Homepage() {
   const [handHistory, setHandHistory] = useState<string[]>([]);
   const hello = trpc.useQuery(['example.hello', { text: 'from tRPC' }]);
 
